@@ -112,7 +112,7 @@ export function HeroSlider() {
         </div>
       </Carousel>
 
-      {/* Primary CTAs */}
+      {/* Primary CTAs — desktop overlay */}
       <div className="absolute inset-x-0 bottom-14 hidden md:flex items-center justify-center gap-4">
         <Button size="lg" render={<Link href="/studios" />} className="shadow-lg">
           Explore Studios
@@ -124,6 +124,18 @@ export function HeroSlider() {
           render={<Link href="/studios?become-host=1" />}
           className="border-white/40 bg-black/25 text-white backdrop-blur hover:bg-black/35 hover:text-white"
         >
+          <Plus />
+          Host Your Space
+        </Button>
+      </div>
+
+      {/* Primary CTAs — stacked below the slider on mobile */}
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 sm:flex-row md:hidden">
+        <Button size="lg" className="w-full sm:w-auto" render={<Link href="/studios" />}>
+          Explore Studios
+          <ArrowRight />
+        </Button>
+        <Button size="lg" variant="outline" className="w-full sm:w-auto" render={<Link href="/studios?become-host=1" />}>
           <Plus />
           Host Your Space
         </Button>

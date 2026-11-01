@@ -9,6 +9,8 @@ import {
   Zap,
 } from "lucide-react";
 
+import { SectionHeading } from "@/components/section-heading";
+
 const BOOKING_STEPS = [
   {
     step: 1,
@@ -43,14 +45,11 @@ const BOOKING_STEPS = [
 export function BookingSteps() {
   return (
     <section className="mx-auto w-full max-w-6xl px-4 py-16">
-      <div className="space-y-2 text-center">
-        <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          How Booking Works
-        </p>
-        <h2 className="text-3xl font-bold tracking-tight">
-          From idea to production in four steps
-        </h2>
-      </div>
+      <SectionHeading
+        align="center"
+        eyebrow="How Booking Works"
+        title="From idea to production in four steps"
+      />
 
       <ol className="relative mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {BOOKING_STEPS.map(({ step, title, description, Icon }, index) => (
@@ -113,18 +112,12 @@ export function HostGuarantee() {
   return (
     <section className="bg-muted/30 py-16">
       <div className="mx-auto w-full max-w-6xl px-4">
-        <div className="space-y-2 text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Host Guarantee &amp; Creator Support
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight">
-            Opening your space shouldn&apos;t feel risky
-          </h2>
-          <p className="mx-auto max-w-xl text-muted-foreground">
-            StudioSpace backs every listing and every booking with platform
-            assurances, so hosts and creators can focus on the work.
-          </p>
-        </div>
+        <SectionHeading
+          align="center"
+          eyebrow="Host Guarantee & Creator Support"
+          title="Opening your space shouldn't feel risky"
+          subtitle="StudioSpace backs every listing and every booking with platform assurances, so hosts and creators can focus on the work."
+        />
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {HOST_ASSURANCES.map(({ title, description, Icon }) => (

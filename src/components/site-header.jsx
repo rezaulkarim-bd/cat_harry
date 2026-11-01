@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  Aperture,
   CalendarCheck,
   ChevronDown,
   LayoutDashboard,
@@ -16,6 +15,7 @@ import {
 
 import { cn } from "cn";
 import { Button } from "@/components/ui/button";
+import { LogoMark } from "@/components/logo-mark";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -71,14 +71,7 @@ export function SiteHeader({ user = null }) {
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4">
         {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center gap-2">
-          <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
-            <Aperture className="size-5" />
-          </span>
-          <span className="text-lg font-semibold tracking-tight">
-            Studio<span className="text-primary">Space</span>
-          </span>
-        </Link>
+        <LogoMark />
 
         {/* Desktop nav */}
         <nav className="hidden items-center md:flex">
@@ -175,11 +168,8 @@ export function SiteHeader({ user = null }) {
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
             <SheetHeader>
-              <SheetTitle className="flex items-center gap-2">
-                <span className="flex size-7 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                  <Aperture className="size-4" />
-                </span>
-                StudioSpace
+              <SheetTitle className="flex items-center">
+                <LogoMark />
               </SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-1 px-4">

@@ -2,30 +2,14 @@ import Link from "next/link";
 import { ArrowRight, Camera, Clock, MapPin, Star } from "lucide-react";
 
 import { getFeaturedStudios } from "@/lib/studios";
+import { SectionHeading } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
-function SectionHeading({ eyebrow, title, subtitle, action = null }) {
-  return (
-    <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-      <div className="space-y-2">
-        <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          {eyebrow}
-        </p>
-        <h2 className="text-3xl font-bold tracking-tight text-balance">{title}</h2>
-        {subtitle ? (
-          <p className="max-w-xl text-muted-foreground">{subtitle}</p>
-        ) : null}
-      </div>
-      {action}
-    </div>
-  );
-}
-
 function StudioCard({ studio }) {
   return (
-    <Card className="group overflow-hidden pt-0">
+    <Card className="group h-full overflow-hidden pt-0">
       {/* Image area: renders <img> when a real image URL exists, otherwise a
           gradient placeholder. TODO: swap to next/image with a remotePattern
           for your CDN once real image hosts are known. */}
@@ -78,7 +62,7 @@ function StudioCard({ studio }) {
         </div>
       </CardContent>
 
-      <CardFooter>
+      <CardFooter className="mt-auto">
         <Button
           variant="outline"
           className="w-full"
@@ -108,7 +92,7 @@ export async function FeaturedStudios() {
         }
       />
 
-      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {studios.map((studio) => (
           <StudioCard key={studio._id} studio={studio} />
         ))}
@@ -116,5 +100,3 @@ export async function FeaturedStudios() {
     </section>
   );
 }
-
-export { SectionHeading };

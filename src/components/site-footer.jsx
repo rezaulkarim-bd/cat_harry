@@ -2,10 +2,10 @@
 
 import { Suspense, useState } from "react";
 import Link from "next/link";
-import { Aperture, Send } from "lucide-react";
+import { Send } from "lucide-react";
 
-import { cn } from "cn";
 import { NAV_LINKS } from "@/components/site-header";
+import { LogoMark } from "@/components/logo-mark";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -60,19 +60,6 @@ const SOCIAL_LINKS = [
   { label: "YouTube", href: "https://youtube.com", icon: YouTubeLogo },
   { label: "LinkedIn", href: "https://linkedin.com", icon: LinkedInLogo },
 ];
-
-function LogoMark({ className }) {
-  return (
-    <Link href="/" className={cn("flex items-center gap-2", className)}>
-      <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
-        <Aperture className="size-5" />
-      </span>
-      <span className="text-lg font-semibold tracking-tight">
-        Studio<span className="text-primary">Space</span>
-      </span>
-    </Link>
-  );
-}
 
 // Rendered inside a Suspense boundary in the bottom bar because `new Date()`
 // is a prerender-blocking value under Cache Components.

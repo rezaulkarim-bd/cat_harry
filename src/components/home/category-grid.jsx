@@ -10,7 +10,7 @@ import {
 
 import { HOME_CATEGORIES } from "@/lib/studios-data";
 import { cn } from "cn";
-import { SectionHeading } from "@/components/home/featured-studios";
+import { SectionHeading } from "@/components/section-heading";
 
 const CATEGORY_ICONS = {
   "photo-studios": Camera,
@@ -34,13 +34,13 @@ export function CategoryGrid() {
           subtitle="Every category is pre-filtered on the studios page — pick one and start shortlisting."
         />
 
-        <div className="mt-8 grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
           {HOME_CATEGORIES.map((category) => (
             <Link
               key={category.slug}
               href={`/studios?category=${category.slug}`}
               className={cn(
-                "group relative flex flex-col items-start gap-10 overflow-hidden rounded-xl border bg-gradient-to-br p-5 transition-all hover:-translate-y-0.5 hover:shadow-md",
+                "group relative flex h-32 flex-col items-start justify-between overflow-hidden rounded-xl border bg-gradient-to-br p-5 transition-all hover:-translate-y-0.5 hover:shadow-md",
                 category.accent
               )}
             >
